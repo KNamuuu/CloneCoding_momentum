@@ -13,52 +13,52 @@ function handleToDoSubmit(event) {
   todoInput.value = "";
 
   const newToDoObj = {
-      text: newTodo,
-      id: Date.now(),
+    text: newTodo,
+    id: Date.now(),
   };
 
   paintToDo(newToDoObj);
   toDos.push(newToDoObj);
-  
+
   saveToDos(toDos);
 }
 
 function paintToDo(newTodo) {
-    const li = document.createElement("li");
-    const span = document.createElement("span");
-    const button = document.createElement("button");
+  const li = document.createElement("li");
+  const span = document.createElement("span");
+  const button = document.createElement("button");
 
-    li.appendChild(span);
-    li.appendChild(button);
-    li.id = newTodo.id;
+  li.appendChild(span);
+  li.appendChild(button);
+  li.id = newTodo.id;
 
-    span.innerText = newTodo.text;
+  span.innerText = newTodo.text;
 
-    button.innerText = "❌";
-    button.addEventListener("click", deleteToDo);
-    button.id = "removeButton";
+  button.innerText = "❌";
+  button.addEventListener("click", deleteToDo);
+  button.id = "removeButton";
 
-    todoList.appendChild(li);
+  todoList.appendChild(li);
 }
 
-function deleteToDo(event){
-    const li = event.target.parentElement;
-    li.remove();
+function deleteToDo(event) {
+  const li = event.target.parentElement;
+  li.remove();
 
-    toDos = toDos.filter((item) => item.id!==parseInt(li.id));
-    saveToDos();
+  toDos = toDos.filter((item) => item.id !== parseInt(li.id));
+  saveToDos();
 }
 
-function saveToDos(){
-    localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
+function saveToDos() {
+  localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
 }
 
 const savedToDos = localStorage.getItem(TODOS_KEY);
 
-if(savedToDos){
-    const parsedToDos = JSON.parse(localStorage.getItem(TODOS_KEY));
-    toDos = parsedToDos;
-    parsedToDos.forEach(paintToDo);
+if (savedToDos) {
+  const parsedToDos = JSON.parse(localStorage.getItem(TODOS_KEY));
+  toDos = parsedToDos;
+  parsedToDos.forEach(paintToDo);
 }
 
 todoForm.addEventListener("submit", handleToDoSubmit);
