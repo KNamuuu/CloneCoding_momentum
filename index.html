@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Clone Momentum</title>
+  </head>
+  <body>
+    <h2 id="clock"></h2>
+
+    <form id="loginForm" class="hidden">
+      <input
+        required
+        maxlength="15"
+        type="text"
+        placeholder="What is your name?"
+        id="loginInput"
+      />
+      <button id="loginButton">Log In</button>
+    </form>
+
+    <h1 id="greeting" class="hidden"></h1>
+
+    <form id="todoForm" class="hidden">
+      <input
+        id="todoInput"
+        type="text"
+        placeholder="Enter a To Do and press Enter"
+        required
+      />
+    </form>
+    <ui id="todoList"></ui>
+
+    <div id="quotes">
+      <span id="quote"></span>
+      <span id="author"></span>
+    </div>
+
+    <button id="logoutButton" class="hidden">Log out</button>
+
+    <script src="js/clock.js"></script>
+    <script src="js/quotes.js"></script>
+    <script src="js/backgroud.js"></script>
+    <script src="js/todo.js"></script>
+    <script src="js/login.js"></script>
+  </body>
+</html>

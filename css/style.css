@@ -1,0 +1,30 @@
+@font-face {
+  font-family: "BMHANNAPro";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.0/BMHANNAPro.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: "BMHANNAPro";
+  color: white;
+}
+
+.hidden {
+  display: none;
+}
+
+#clock {
+  font-size: 500%;
+}
+
+#greeting {
+  font-size: 300%;
+}
+
+#removeButton {
+  background: none;
+  border: none;
+  font-size: 80%;
+}
